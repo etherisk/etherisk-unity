@@ -6,18 +6,13 @@ public class LobbyPanel : MonoBehaviour {
 
   public GameObject buttonTemplate;
 
-	// Use this for initialization
-	void Start () {
+  void PopulateGames(string[] games) {
     var position = new Vector3(0, -10, 0);
-    for (int i = 0; i < 5; ++i) {
-	    GameObject button = (GameObject) Instantiate(buttonTemplate, position, Quaternion.identity);
+    foreach (var game in games) {
+      GameObject button = (GameObject) Instantiate(buttonTemplate, position, Quaternion.identity);
       button.transform.SetParent(transform, false);
+      button.GetComponentInChildren<Text>().text = game;
       position.y -= 35;
     }
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+  }
 }
