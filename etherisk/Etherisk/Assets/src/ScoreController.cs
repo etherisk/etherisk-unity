@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MatchMaking : MonoBehaviour {
+public class ScoreController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
