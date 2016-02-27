@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class World : MonoBehaviour {
+public class MatchMakingController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
