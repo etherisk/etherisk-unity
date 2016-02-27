@@ -5,14 +5,12 @@ using System.Collections;
 public class LobbyPanel : MonoBehaviour {
 
   public GameObject buttonTemplate;
+  private Vector3 nextPos = new Vector3(0, -10, 0);
 
-  void PopulateGames(string[] games) {
-    var position = new Vector3(0, -10, 0);
-    foreach (var game in games) {
-      GameObject button = (GameObject) Instantiate(buttonTemplate, position, Quaternion.identity);
-      button.transform.SetParent(transform, false);
-      button.GetComponentInChildren<Text>().text = game;
-      position.y -= 35;
-    }
+  void AddGame(string gameName) {
+    GameObject button = (GameObject) Instantiate(buttonTemplate, nextPos, Quaternion.identity);
+    button.transform.SetParent(transform, false);
+    button.GetComponentInChildren<Text>().text = gameName;
+    nextPos.y -= 35;
   }
 }
