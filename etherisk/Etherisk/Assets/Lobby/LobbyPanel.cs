@@ -7,6 +7,10 @@ public class LobbyPanel : MonoBehaviour {
   public GameObject buttonTemplate;
   private Vector3 nextPos = new Vector3(0, -10, 0);
 
+  void Start() {
+    Application.ExternalCall("FetchGameList");
+  }
+
   void AddGame(string gameName) {
     GameObject button = (GameObject) Instantiate(buttonTemplate, nextPos, Quaternion.identity);
     button.transform.SetParent(transform, false);
