@@ -34,6 +34,8 @@ public class WorldController : MonoBehaviour {
 
 	void Start () {
 
+		Debug.Log( "Starting World..." ) ;
+
 		countries = GameObject.FindGameObjectsWithTag("Country");
 
 		foreach ( GameObject country in countries ) {
